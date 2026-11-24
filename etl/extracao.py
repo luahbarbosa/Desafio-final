@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 import requests
@@ -42,3 +43,9 @@ if __name__ == "__main__":
         dados = extrair_rota(rota)
         with open(f"brutos/{rota}.json", "w", encoding="utf-8") as f:
             json.dump(dados, f, ensure_ascii=False)
+
+    with open("insumos/dados/produtos.csv", encoding="utf-8", newline="") as f:
+        produtos = list(csv.DictReader(f))
+    with open("brutos/produtos.json", "w", encoding="utf-8") as f:
+        json.dump(produtos, f, ensure_ascii=False)
+    print(f"extracao: produtos registros={len(produtos)}")
