@@ -78,6 +78,8 @@ def transformar_clientes(clientes):
         t["estado"] = padronizar_estado(estado_original)
         if t["estado"] != estado_original:
             estados_padronizados += 1
+            
+        t["cadastro_em"] = padronizar_data(t["cadastro_em"]) 
 
         tratados.append(t)
     print(f"transformacao: emails_nulos={emails_nulos} estados_padronizados={estados_padronizados}")

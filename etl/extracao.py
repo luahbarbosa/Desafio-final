@@ -1,6 +1,3 @@
-import csv
-import json
-import os
 import requests
 
 BASE = "http://127.0.0.1:8000"
@@ -27,6 +24,7 @@ def extrair_rota(rota, page_size=50):
             break
 
         corpo = resp.json()
+
         if total_paginas is None:
             total_paginas = corpo["total_pages"]
 
@@ -35,17 +33,3 @@ def extrair_rota(rota, page_size=50):
 
     print(f"extracao: {rota} paginas={total_paginas} registros={len(registros)}")
     return registros
-
-
-if __name__ == "__main__":
-    os.makedirs("brutos", exist_ok=True)
-    for rota in ("clientes", "pedidos"):
-        dados = extrair_rota(rota)
-        with open(f"brutos/{rota}.json", "w", encoding="utf-8") as f:
-            json.dump(dados, f, ensure_ascii=False)
-
-    with open("insumos/dados/produtos.csv", encoding="utf-8", newline="") as f:
-        produtos = list(csv.DictReader(f))
-    with open("brutos/produtos.json", "w", encoding="utf-8") as f:
-        json.dump(produtos, f, ensure_ascii=False)
-    print(f"extracao: produtos registros={len(produtos)}")

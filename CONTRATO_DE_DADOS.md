@@ -132,5 +132,5 @@ O banco de dados escolhido é o PostgreSQL, utilizando o esquema disponibilizado
 
 | Versão | Data | Descrição da Alteração |
 | :--- | :--- | :--- |
-| `1.0` | 2026-11-23 | Criação inicial do contrato de dados com base no esquema PostgreSQL fornecido para o desafio Verdejar. |
+| `2.0` | 2026-11-24 | Criação inicial do contrato de dados com base no esquema PostgreSQL fornecido para o desafio Verdejar. |
 
