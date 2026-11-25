@@ -9,7 +9,6 @@ from .carga import carregar, reconciliar
 
 def salvar_bruto(nome, dados):
     os.makedirs("brutos", exist_ok=True)
-
     with open(f"brutos/{nome}.json", "w", encoding="utf-8") as f:
         json.dump(dados, f, ensure_ascii=False)
 

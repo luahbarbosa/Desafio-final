@@ -48,7 +48,11 @@ Os comandos são para o Git Bash no Windows e rodam na raiz do projeto.
    ```bash
    cd insumos
    python api_verdejar.py
-   ```
+
+6. Colocar Senha:
+   ```bash
+   export DB_PASSWORD=luana
+
 5. ETL completo (extração, transformação, carga e reconciliação):
    ```bash
    ./.venv/Scripts/python.exe -m etl.main
