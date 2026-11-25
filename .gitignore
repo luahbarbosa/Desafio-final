@@ -1,3 +1,6 @@
+.venv/
+.pytest_cache/
 brutos/
 .env
 __pycache__/
+verdejar.db
